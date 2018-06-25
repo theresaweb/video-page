@@ -5,6 +5,7 @@
 .videoThumb {
   float: left;
   margin: 0 5px;
+  padding: 5px;
 }
 .videoThumb img {
   height: 56px;
@@ -14,4 +15,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   width: 90px;
+}
+.activeThumb {
+  background-color: lightblue;
+  border: 2px solid aqua;
 }
