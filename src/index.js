@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import "./styles.css";
 var data = require("../../data/data.json");
 
-class Page extends React.Component {
+class VideoPlaylist extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,4 +25,4 @@ class Page extends React.Component {
   }
 }
 
-ReactDOM.render(<Page />, document.getElementById("root"));
+ReactDOM.render(<VideoPlaylist />, document.getElementById("root"));
