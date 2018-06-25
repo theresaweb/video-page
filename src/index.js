@@ -7,7 +7,8 @@ class Video extends React.Component {
   render() {
     return (
       <div>
-        <video src="xxx" />
+        <video controls src={this.props.playlist[0].content_url} />
+        <footer>{this.props.playlist[0].title}</footer>
       </div>
     );
   }
@@ -17,18 +18,28 @@ class VideoPlaylist extends React.Component {
     super(props);
     this.state = {
       error: "",
-      playlist: data.playlist
+      playlist: data.playlist,
+      contentUrl: ""
     };
   }
   render() {
-    let thisPlaylist = this.state.playlist;
-    console.log(thisPlaylist);
+    let thisPlaylist = this.state.playlist.slice();
     return (
-      <ul>
-        {thisPlaylist.map((video, index) => {
-          return <li key={index}>{video.content_url}</li>;
-        })}
-      </ul>
+      <div>
+        <Video playlist={this.state.playlist} />
+        <div className="videoCarousel">
+          {thisPlaylist.map((video, index) => {
+            return (
+              <img
+                className="videoThumb"
+                key={index}
+                src={video.image_url}
+                alt={video.title}
+              />
+            );
+          })}
+        </div>
+      </div>
     );
   }
 }
