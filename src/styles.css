@@ -3,7 +3,15 @@
   text-align: center;
 }
 .videoThumb {
-  width: 90px;
   float: left;
   margin: 0 5px;
+}
+.videoThumb img {
+  height: 56px;
+}
+.videoThumb figcaption {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 90px;
 }

@@ -5,10 +5,11 @@ import "./styles.css";
 var data = require("../../data/data.json");
 class Video extends React.Component {
   render() {
+    var thisVideoIndex = this.props.videoIndex;
     return (
       <div>
-        <video controls src={this.props.playlist[0].content_url} />
-        <footer>{this.props.playlist[0].title}</footer>
+        <video controls src={this.props.playlist[thisVideoIndex].content_url} />
+        <footer>{this.props.playlist[thisVideoIndex].title}</footer>
       </div>
     );
   }
@@ -19,23 +20,35 @@ class VideoPlaylist extends React.Component {
     this.state = {
       error: "",
       playlist: data.playlist,
-      contentUrl: ""
+      videoIndex: 0
     };
+  }
+  handleThumbClick(index) {
+    this.setState({
+      videoIndex: index
+    });
   }
   render() {
     let thisPlaylist = this.state.playlist.slice();
     return (
       <div>
-        <Video playlist={this.state.playlist} />
+        <Video
+          playlist={this.state.playlist}
+          videoIndex={this.state.videoIndex}
+        />
         <div className="videoCarousel">
           {thisPlaylist.map((video, index) => {
+            var imgUrl = video.image_url + "?width=XXX";
             return (
-              <img
-                className="videoThumb"
-                key={index}
-                src={video.image_url}
-                alt={video.title}
-              />
+              <figure className="videoThumb">
+                <img
+                  key={index}
+                  src={imgUrl}
+                  alt={video.title}
+                  onClick={() => this.handleThumbClick(index)}
+                />
+                <figcaption>{video.title}</figcaption>
+              </figure>
             );
           })}
         </div>
