@@ -3,7 +3,15 @@ import ReactDOM from "react-dom";
 
 import "./styles.css";
 var data = require("../../data/data.json");
-
+class Video extends React.Component {
+  render() {
+    return (
+      <div>
+        <video src="xxx" />
+      </div>
+    );
+  }
+}
 class VideoPlaylist extends React.Component {
   constructor(props) {
     super(props);
