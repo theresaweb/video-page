@@ -2,19 +2,23 @@
   font-family: sans-serif;
   text-align: center;
 }
+#activeVideo {
+  padding-bottom: 20px;
+}
 .videoThumb {
   float: left;
-  margin: 0 5px;
   padding: 5px;
+  width: 20%;
 }
 .videoThumb img {
-  height: 56px;
+  width: 100%;
 }
 .videoThumb figcaption {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 90px;
+  width: 90%;
+  font-size: small;
 }
 .activeThumb {
   background-color: lightblue;
