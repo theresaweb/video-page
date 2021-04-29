@@ -5,12 +5,11 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "bootstrap": "4.1.1",
-    "react": "16.3.2",
-    "react-dom": "16.3.2",
-    "react-scripts": "1.1.4"
+    "bootstrap": "^4.6.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-scripts": "^4.0.3"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
